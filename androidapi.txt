@@ -1,0 +1,133 @@
+req Signup: 18.212.20.61:8080/signup
+{ "MSSV" : "1520118" , "Ho" : "Nguyen", "Ten" : "Bim" , "Mobile" : "0326" , "DateOfBirth" : "25/11/1997" , "Grade" : "DTVT" , "Addr" : "135 Tran Hung Dao" ,"lastNameParent" : "Nguyen Van" , "firstNameParent" : "Viet" , "MobileParent" : "0972", "User" : "hoangnamzero21" , "Pass" : "Hoangnam" , "Email" : "hoangnamzero2517@gmail.com"}
+
+req Login: 18.212.20.61:8080/login
+{ "id" : "1520118" , "pass" : "Hoangnam251" }
+Kết quả :
+ok : {
+  "status": "ok",
+  "admin": true
+}
+
+khong có account : {"status": "500","error" : "Unvalid username"}
+sai pass : {"status": "500","error" : "wrong pass"}
+
+Edit account: 18.212.20.61:8080/editAccount
+{ "MSSV" : "1520114" , "Mobile" : "0326" , "NameParent" : "Viet" , "MobileParent" : "0256" ,  "Pass" : "Hoangnam251"}
+
+
+get monhoc: 18.212.20.61:8080/getMonHoc
+{ "MSSV" : "1520118" , "HocKi" : 2 , "NamHoc" : 2019}
+Kết quả :
+[
+  {
+    "Mon": "Điện Tử Số",
+    "IdMonHoc": "DTV003",
+    "DiemGiuaKi": "6.5",
+    "DiemCuoiKi": "",
+    "MoTa": ""
+  },
+  {
+    "Mon": "Điện Tử Căn Bản",
+    "IdMonHoc": "DTV001",
+    "DiemGiuaKi": "",
+    "DiemCuoiKi": "",
+    "MoTa": ""
+  }
+]
+
+getInfoMonHoc : 18.212.20.61:8080/getInfoMonHoc
+{ "idMonHoc" : "DTV001" }
+Kết quả :
+{
+  "ID": "DTV001",
+  "TenMonHoc": "Điện Tử Căn Bản",
+  "TinChi": 3,
+  "GiangVien": "GS. Long",
+  "MailGV": "gslong@hcmus.com",
+  "LichHoc": "T3(T1-T4)",
+  "LichThi": "10/6",
+  "GioThi": "8h30"
+}
+
+getInfoMonHocDangKi : 18.212.20.61:8080/getInfoMonHocDangKi
+Kết quả :
+[
+  {
+    "ID": "DTV301",
+    "TenMonHoc": "Hệ Thống Nhúng",
+    "TinChi": 4,
+    "GiangVien": "PGS. Bình",
+    "MailGV": "pgsbinh@hcmus.com",
+    "LichHoc": "T4(T1-T4)",
+    "LichThi": "18/6",
+    "GioThi": "9h50"
+  },
+  {
+    "ID": "DTV302",
+    "TenMonHoc": "Lập Trình Mạng",
+    "TinChi": 3,
+    "GiangVien": "PSG. Trị",
+    "MailGV": "pgstri@hcmus.com",
+    "LichHoc": "T2(T6-T9)",
+    "LichThi": "17/6",
+    "GioThi": "7h30"
+  },
+  {
+    "ID": "DTV303",
+    "TenMonHoc": "Bộ Nhớ Máy Tính",
+    "TinChi": 3,
+    "GiangVien": "PSG. Thương",
+    "MailGV": "psgthuong@hcmus.com",
+    "LichHoc": "T3(T6-T9)",
+    "LichThi": "22/6",
+    "GioThi": "13h30"
+  },
+  {
+    "ID": "DTV304",
+    "TenMonHoc": "Lập Trình Android",
+    "TinChi": 4,
+    "GiangVien": "ThS. Nam",
+    "MailGV": "thsnam@hcmus.com",
+    "LichHoc": "T7(T3-T5)",
+    "LichThi": "10/6",
+    "GioThi": "15h30"
+  }
+]
+
+DKiMonHoc : 18.212.20.61:8080/dkiMonHoc
+{"MSSV" : "1520118" , "MH1" : "DTV302" , "MH2" : "DTV304"}
+
+Nhận kết quả đăng kí : 18.212.20.61:8080/getKQDki
+{ "MSSV" : "1520118" }
+Kết quả :
+[
+  {
+    "GiangVien": "Lập Trình Mạng",
+    "GVHD": "PSG. Trị"
+  },
+  {
+    "GiangVien": "Lập Trình Android",
+    "GVHD": "ThS. Nam"
+  }
+]
+
+
+Update điểm : 18.212.20.61:8080/updateMark 
+{ "MSSV" : "1520118", "maMonHoc" : "DTV001" , "diemGiuaKi" : 2.0 , "diemCuoiKi" : 3.0 , "moTa" : ""}
+
+kết quả : 
+{
+  "status": "update finished"
+}
+
+Update dki mon hoc : 18.212.20.61:8080/updateDkiMonHoc
+{"MSSV" : "1520118" , "MH1" : "" , "MH2" : ""}
+
+ket qua :
+{
+  "status": "ok"
+}
+
+
+
